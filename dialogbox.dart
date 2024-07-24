@@ -6,6 +6,7 @@ class DialogBox extends StatelessWidget {
   VoidCallback onSave;
   VoidCallback onCancel;
 
+  //Constructor
   DialogBox({
     super.key,
     required this.controller,
@@ -15,6 +16,7 @@ class DialogBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Prompting a dialog box to type a task 
     return AlertDialog(
       backgroundColor: Colors.yellow,
       content: Container(
@@ -30,6 +32,7 @@ class DialogBox extends StatelessWidget {
                 ),
               ),
 
+              //Buttons to save and clear the dialog box prompted
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
