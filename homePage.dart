@@ -26,6 +26,7 @@ class _HomeState extends State<Home> {
       db.createInitialData();
     }
     else{
+      //If it is not the first time, the previous data will be loaded 
       db.loadData();
     }
 
@@ -37,18 +38,19 @@ class _HomeState extends State<Home> {
   //Checkbox tapped
   void changeState(bool? value,int index){
     setState(() {
-      db.todoList[index][1]=!db.todoList[index][1];
+      db.todoList[index][1]=!db.todoList[index][1];  //If the user taps on the checkbox, the state of the checkbox changes
     });
-    db.updateData();
+    db.updateData();      //Updating the database once an operation is done
   }
 
+  
   void Saving(){
     setState(() {
       db.todoList.add([_controller.text,false]);
-      _controller.clear();
+      _controller.clear();     //Clearing the past enteredtask from the text field
     });
-    Navigator.of(context).pop();
-    db.updateData();
+    Navigator.of(context).pop();    //Popping the dialogbox once the task is entered
+    db.updateData();    //Updating the database once an operation is done
   }
 
   //A function create a new task
@@ -70,7 +72,7 @@ class _HomeState extends State<Home> {
     setState(() {
       db.todoList.removeAt(index);
     });
-    db.updateData();
+    db.updateData();    //Updating the database once an operation is done
   }
 
   @override
