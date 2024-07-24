@@ -18,6 +18,7 @@ class ToDoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //A slidable action to delete a task 
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: Slidable(
@@ -42,11 +43,12 @@ class ToDoTile extends StatelessWidget {
               Text(
                 taskName,
                 style: TextStyle(
-                    decoration: taskCompleted? TextDecoration.lineThrough:TextDecoration.none
+                    decoration: taskCompleted? TextDecoration.lineThrough:TextDecoration.none  //If the task is done, strike through the task with a single line
                 ),
               ),
             ],
           ),
+          //Accessing the radius 
           decoration: BoxDecoration(
               color: Colors.yellow,
               borderRadius: BorderRadius.circular(12.0)
